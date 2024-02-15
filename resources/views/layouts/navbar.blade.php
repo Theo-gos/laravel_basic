@@ -13,7 +13,7 @@
                     </a>
                 </li>
                 <li class="float-left mx-3 hover:text-gray-400">
-                    <a href="lists">
+                    <a href="{{route('lists')}}">
                         Your To Do List
                     </a>
                 </li>
