@@ -30,6 +30,15 @@ class ListItem extends Model
     ];
 
     /**
+     * The model's default values for attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'user_id' => 2,
+    ];
+
+    /**
      * Get the user that owns the todo item.
      */
     public function user(): BelongsTo

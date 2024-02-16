@@ -1,7 +1,7 @@
 <x-main-layout>
     <x-slot name="header">
         <h2 class="text-3xl font-semibold self-end">Your to do list</h2>
-        <a href="lists/detail" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline rounded mx-2 mt-3 block w-fit mb-1">Add An Item</a>
+        <a href="{{route('lists.add')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline rounded mx-2 mt-3 block w-fit mb-1">Add An Item</a>
     </x-slot>
 
     <div class="to-do-list striped flex flex-col justify-between items-start">
@@ -40,7 +40,7 @@
                 <p>{{$item->priority}}</p>
             </div>
             <div class="item_controls grid-cols-subgrid col-span-2 px-1 border-r-2 border-black flex flex-col xl:flex-row justify-center items-center">
-                <a href="{{route('lists.detail', ['id' => $item->id])}}" class="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded mb-1 xl:mb-0 mx-1 w-2/3 xl:w-1/2 text-center">Edit</a>
+                <a href="{{route('lists.edit', ['id' => $item->id])}}" class="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded mb-1 xl:mb-0 mx-1 w-2/3 xl:w-1/2 text-center">Edit</a>
                 <a href="{{route('lists.delete', ['id' => $item->id])}}" class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded mx-1 w-2/3 xl:w-1/2 text-center">Delete</a>
             </div>
         </div>

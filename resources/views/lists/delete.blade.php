@@ -3,7 +3,7 @@
         <div class="card-text my-2">
             <p class="text-lg">Are you sure you want to delete this post? This cannot be undone.</p>
         </div>
-        <form method="POST" action="{{route('users.item.delete', ['id' => $item->id])}}" class="form flex justify-center my-3">
+        <form method="POST" action="{{route('lists.item.delete', ['id' => $item->id])}}" class="form flex justify-center my-3">
             @csrf
             @method('DELETE')
             <input type="hidden" name="id" value="{{$item->id}}" />
