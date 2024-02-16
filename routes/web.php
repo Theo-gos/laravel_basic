@@ -24,15 +24,16 @@ Route::view('/', 'index');
 
 Route::controller(ListController::class)->group(function () {
     Route::get('/lists', 'show')->name('lists');
-    Route::get('/lists/detail/{id?}', 'detail')->name('lists.detail');
+    Route::get('/lists/add', 'add')->name('lists.add');
+    Route::get('/lists/edit/{id}', 'edit')->name('lists.edit');
     Route::get('/lists/delete/{id}', 'delete')->name('lists.delete');
+    Route::put('/lists/item/edit/{id}', 'editItem')->name('lists.item.edit');
+    Route::delete('/lists/item/delete/{id}', 'deleteItem')->name('lists.item.delete');
+    Route::post('/lists/item/add', 'addItem')->name('lists.item.add');
 });
 
-Route::controller(UserController::class)->group(function () {
-    Route::put('/users/item/edit/{id}', 'editItem')->name('users.item.edit');
-    Route::delete('/users/item/delete/{id}', 'deleteItem')->name('users.item.delete');
-    Route::post('/users/item/add', 'addItem')->name('users.item.add');
-});
+// Route::controller(UserController::class)->group(function () {
+// });
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

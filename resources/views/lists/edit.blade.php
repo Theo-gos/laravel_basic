@@ -9,13 +9,10 @@
         <h2 class="text-3xl font-semibold self-end">Your to do</h2>
     </x-slot>
 
-    <form class="w-full max-w-lg border-2 p-3 border-gray-200 mx-auto form" action="{{$item->id ? route('users.item.edit', ['id' => $item->id]) : route('users.item.add')}}" method="POST">
+    <form class="w-full max-w-lg border-2 p-3 border-gray-200 mx-auto form" action="{{route('lists.item.edit', ['id' => $item->id])}}" method="POST">
         @csrf
-        @if($item->id)
         @method('PUT');
-        @else
-        @method('POST');
-        @endif
+
         <div class="flex flex-wrap -mx-3 mb-6 justify-between">
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 flex-grow">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="title">
